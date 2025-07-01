@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: #111;
+  color: #fff;
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  z-index: 1000;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #00ffff;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?design') center/cover no-repeat;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeLogo 3s ease infinite alternate;
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+header p {
+  font-size: 1.2rem;
+  color: #ddd;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+section h2 {
+  font-size: 2rem;
+  color: #00ffff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-left: 4px solid #00ffff;
+  padding-left: 10px;
+}
+section p, section li {
+  color: #ddd;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+li {
+  margin-bottom: 0.5rem;
+}
+.project {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+.project:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2);
+}
+.project img {
+  width: 100%;
+  display: block;
+}
+.project p {
+  padding: 1rem;
+}
+#timeline ul {
+  border-left: 3px solid #00ffff;
+  padding-left: 20px;
+}
+#timeline ul li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+#timeline ul li::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background: #00ffff;
+  border-radius: 50%;
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  background: #1a1a1a;
+}
+@keyframes fadeLogo {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  section h2 {
+    font-size: 1.5rem;
+  }
+}
